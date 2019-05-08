@@ -1,0 +1,29 @@
+<div class="row">
+    <div class="col-8">
+
+
+        <h1 class="text-center mb-3">Eat-Da-Burger</h1>
+
+        <h4>Burgers</h4>
+        <ul class="list-group">
+            {{#each burgers}}
+            <li class="list-group-item burger">{{this.burgers}}</li>
+            {{/each}}
+        </ul>
+        <panel>
+            <form class="create-form">
+                <div class="form-group">
+                    <label for="newburger" id="color-override">New Burger:</label>
+                    <input type="text" id="newBurger" name="burger">
+
+                    {{!-- Create a button in index.handlebars that will submit the user input into the database. --}}
+                    <button type="submit" name="submit" class="btn btn-primary create-form"
+                        id="addburger">Submit</button>
+                </div>
+            </form>
+        </panel>
+
+        <a href="/api/burgers" class="btn btn-light mt-4">Visit API</a>
+    </div>
+</div>
+</div>
