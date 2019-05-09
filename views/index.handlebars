@@ -2,14 +2,46 @@
     <div class="col-8">
 
 
-        <h1 class="text-center mb-3">Eat-Da-Burger</h1>
+        <main>
+            <div class="container">
+                <div class="row">
+                    <!-- Column for available burgers and customer name -->
+                    <div class="col s8 card">
+                        {{#each burgers}}
+                        {{#unless this.devoured}}
+                        <div class="row">
+                            <div class="burgerName">
+                                <div class='burgerAvailable'>{{this.burger_name}}</div>
+                            </div>
 
-        <h4>Burgers</h4>
-        <ul class="list-group">
-            {{#each burgers}}
-            <li class="list-group-item burger">{{this.burgers}}</li>
-            {{/each}}
-        </ul>
+                            <div class="customerEats">
+                                <button type="submit" class="eatBurgerButton" id="{{this.id}}"><i
+                                        class="fas fa-hamburger"></i></button>
+                                </form>
+                            </div>
+                        </div>
+                        {{/unless}}
+                        {{/each}}
+                    </div> <!-- End col s8 -->
+
+                    <!-- Column for burgers that are no longer available -->
+                    <div class="col s4 card">
+                        {{#each burgers}}
+                        {{#if this.devoured}}
+                        <div class='burgerEaten'>
+                            <div>
+                                {{this.burger_name}}
+                                <button type="submit" class="barfTheBurger" id="{{this.id}}">🤮</button>
+
+                            </div>
+                        </div>
+                        {{/if}}
+                        {{/each}}
+                    </div> <!-- End col s4 -->
+                </div> <!-- End row -->
+            </div> <!-- End container -->
+        </main>
+
         <panel>
             <form class="create-form">
                 <div class="form-group">
