@@ -58,13 +58,13 @@ module.exports = function(app) {
         }
       )
       .then(function(burger) {
-        res.redirect("/");
+        res.json(burger);
       });
   });
 
   // DELETE route for deleting posts
 
-  app.delete("/api/burger/:id", function(req, res) {
+  app.delete("/api/burgers/:id", function(req, res) {
     db.burger
       .destroy({
         where: {
@@ -72,8 +72,7 @@ module.exports = function(app) {
         }
       })
       .then(function(burger) {
-        console.log(burger);
-        res.redirect("/");
+        res.json(burger);
       });
   });
 };

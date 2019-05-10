@@ -36,7 +36,6 @@ $(function() {
     }).then(function(event) {
       console.log("Updated the burger");
       // Reload the page to get the updated burger list.
-      console.log(event);
       location.reload();
     });
   });
@@ -51,7 +50,7 @@ $(function() {
       type: "DELETE",
       url: "/api/burgers/" + id
     }).then(function(event) {
-      console.log(event);
+      location.reload();
     });
   });
 });
