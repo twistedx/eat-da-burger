@@ -8,5 +8,5 @@ The user may enter any burger name to add it to the menu. This also adds the new
 
 
 <hr>
-# Demo
+<h2>demo</h2>
 The demo of the burger eating application can be found <a href="https://shielded-reaches-14712.herokuapp.com/">here.</a>
